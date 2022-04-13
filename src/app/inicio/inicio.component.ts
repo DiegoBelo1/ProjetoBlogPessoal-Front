@@ -26,7 +26,7 @@ export class InicioComponent implements OnInit {
   idUser = environment.id
 
   constructor(
-    private route: Router,
+    private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
     private authService: AuthService,
@@ -36,7 +36,7 @@ export class InicioComponent implements OnInit {
     window.scroll(0,0)
 
     if(environment.token == ''){
-      this.route.navigate(['/entrar'])
+      this.router.navigate(['/entrar'])
     }
 
     this.authService.refreshToken();
